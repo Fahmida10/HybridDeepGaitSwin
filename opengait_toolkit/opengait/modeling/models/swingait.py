@@ -896,9 +896,9 @@ class SwinGait(BaseModel):
 
         out0 = self.layer0(sils)
         out1 = self.layer1(out0)
-        out2 = self.layer2(out1) # [n, c, s, h, w]
+        out2 = self.layer2(out1) 
         out2 = self.ulayer(out2)
-        out4 = self.transformer(out2) # [n, 768, s/4, 4, 3]
+        out4 = self.transformer(out2) 
 
         # Temporal Pooling, TP
         outs = self.TP(out4, seqL, options={"dim": 2})[0]  # [n, c, h, w]
