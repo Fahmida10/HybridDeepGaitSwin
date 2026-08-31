@@ -60,20 +60,6 @@ gaitbase,sustech,Rank-1,Umbrella,74.66,60k
 gaitbase,sustech,Rank-1,Uniform,74.76,60k
 gaitbase,sustech,Rank-1,Occlusion,79.16,60k
 gaitbase,sustech,Rank-1,Night,25.07,60k
-swingait,casiab,Rank-1,NM,95.70,60k
-swingait,casiab,Rank-1,BG,90.52,60k
-swingait,casiab,Rank-1,CL,69.62,60k
-swingait,hid,Rank-1,Overall,26.17,60k
-swingait,hid,mAP,Overall,37.83,60k
-swingait,sustech,Rank-1,Overall,69.18,60k
-swingait,sustech,Rank-1,Normal,73.93,60k
-swingait,sustech,Rank-1,Bag,73.16,60k
-swingait,sustech,Rank-1,Clothing,31.84,60k
-swingait,sustech,Rank-1,Carrying,69.72,60k
-swingait,sustech,Rank-1,Umbrella,68.11,60k
-swingait,sustech,Rank-1,Uniform,67.82,60k
-swingait,sustech,Rank-1,Occlusion,70.69,60k
-swingait,sustech,Rank-1,Night,22.69,60k
 deepgaitv2_suite,casiab,Rank-1,NM,97.06,later suite; NOT thesis 97.28
 deepgaitv2_suite,casiab,Rank-1,BG,93.18,later suite; NOT thesis 93.52
 deepgaitv2_suite,casiab,Rank-1,CL,78.52,later suite; NOT thesis 76.75
