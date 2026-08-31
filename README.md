@@ -62,7 +62,7 @@ See `figures/architecture.png`, `figures/cnn_vs_hybrid.png` and `figures/attenti
 
 ```
 HybridDeepGaitSwin/
-├── hybrid_gait.py          ← canonical model (read this in a viva)
+├── hybrid_gait.py          ← canonical model
 ├── train.sh                ← full training + eval
 ├── eval.sh                 ← standalone evaluation
 ├── environment.sh
@@ -71,7 +71,6 @@ HybridDeepGaitSwin/
 ├── scripts/                ← preprocess, train-all, sample smoke test
 ├── figures/                ← dissertation figures
 ├── results/metrics.csv     ← reported Rank-1 table
-├── docs/defence.md         ← short viva answers
 └── opengait_toolkit/       ← trimmed OpenGait (no weights)
 ```
 
