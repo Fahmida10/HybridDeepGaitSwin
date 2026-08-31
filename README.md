@@ -150,8 +150,7 @@ bash scripts/train_sample.sh --sample_root /path/to/sample --gpu 0
 
 Shared: AttentionFusion squeeze 16; HPP 16 parts; triplet margin 0.2; CE scale 16; mixed precision.
 
-DeepGaitV2 was trained with SGD. AdamW plus extra hybrid parameters is a stated confound 
-
+DeepGaitV2 was trained with SGD. AdamW and the Hybrid's additional parameters are stated confounds.
 ---
 
 ## Reproducibility
