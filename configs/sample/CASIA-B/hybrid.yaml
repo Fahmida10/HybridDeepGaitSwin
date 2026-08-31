@@ -1,0 +1,86 @@
+# Smoke-test config — HybridDeepGaitSwin on CASIA-B (200 iterations, 8 identities)
+
+data_cfg:
+  dataset_name: CASIA-B
+  dataset_root: DATA_ROOT_PLACEHOLDER
+  dataset_partition: PARTITION_PLACEHOLDER
+  num_workers: 0
+  remove_no_gallery: false
+  cache: false
+  test_dataset_name: CASIA-B
+
+evaluator_cfg:
+  enable_float16: true
+  restore_ckpt_strict: false
+  restore_hint: EVAL_RESTORE_HINT
+  save_name: HybridDeepGaitSwin_Sample_CASIAB
+  eval_func: evaluate_indoor_dataset
+  sampler:
+    batch_shuffle: false
+    batch_size: 1
+    sample_type: all_ordered
+    frames_all_limit: 720
+  metric: euc
+  transform:
+    - type: BaseSilCuttingTransform
+
+loss_cfg:
+  - loss_term_weight: 1.0
+    margin: 0.2
+    type: TripletLoss
+    log_prefix: triplet
+  - loss_term_weight: 1.0
+    scale: 16
+    type: CrossEntropyLoss
+    log_prefix: softmax
+    log_accuracy: true
+
+model_cfg:
+  model: HybridDeepGaitSwin
+  Backbone:
+    mode: p3d
+    in_channels: 1
+    layers: [1, 1, 1, 1]
+    channels: [64, 128, 256, 512]
+    swin_layers: [1, 1]
+    swin_embed_dim: 256
+    swin_num_heads: [8, 16]
+  Fusion:
+    squeeze_ratio: 16
+  bin_num: [16]
+  SeparateBNNecks:
+    class_num: 8
+
+optimizer_cfg:
+  lr: 0.0003
+  solver: AdamW
+  weight_decay: 0.02
+
+scheduler_cfg:
+  gamma: 0.1
+  milestones: [60, 120, 160]
+  scheduler: MultiStepLR
+
+trainer_cfg:
+  enable_float16: true
+  fix_BN: false
+  with_test: false
+  log_iter: 10
+  restore_ckpt_strict: false
+  restore_hint: TRAIN_RESTORE_HINT
+  optimizer_reset: false
+  scheduler_reset: false
+  save_iter: 100
+  save_name: HybridDeepGaitSwin_Sample_CASIAB
+  sync_BN: false
+  T_max_iter: 200
+  total_iter: 200
+  sampler:
+    batch_shuffle: true
+    batch_size: [2, 2]
+    frames_num_fixed: 8
+    frames_skip_num: 2
+    sample_type: fixed_ordered
+    type: TripletSampler
+  transform:
+    - type: BaseSilCuttingTransform

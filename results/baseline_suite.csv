@@ -1,0 +1,90 @@
+# Additional OpenGait baseline campaign (NOT the primary DeepGaitV2 vs HybridDeepGaitSwin comparison).
+# Source: Learning Curve/OpenGait_Baselines/logs/baseline_results.csv
+# GaitSet rows are the later 60k evaluation.
+# GaitGL CASIA-B evaluated from 80000.pt; GaitGL HID from 70000.pt.
+# DeepGaitV2_suite HID 4.45 is NOT the thesis DeepGaitV2 HID 90.78.
+model,dataset,metric,condition,value_pct,notes
+gaitset,casiab,Rank-1,NM,96.00,60k
+gaitset,casiab,Rank-1,BG,89.87,60k
+gaitset,casiab,Rank-1,CL,75.28,60k
+gaitset,hid,Rank-1,Overall,45.22,60k
+gaitset,hid,mAP,Overall,57.39,60k
+gaitset,sustech,Rank-1,Overall,55.79,60k
+gaitset,sustech,Rank-1,Normal,58.41,60k
+gaitset,sustech,Rank-1,Bag,59.39,60k
+gaitset,sustech,Rank-1,Clothing,25.32,60k
+gaitset,sustech,Rank-1,Carrying,56.25,60k
+gaitset,sustech,Rank-1,Umbrella,55.24,60k
+gaitset,sustech,Rank-1,Uniform,48.18,60k
+gaitset,sustech,Rank-1,Occlusion,52.75,60k
+gaitset,sustech,Rank-1,Night,22.47,60k
+gaitpart,casiab,Rank-1,NM,96.07,60k
+gaitpart,casiab,Rank-1,BG,90.66,60k
+gaitpart,casiab,Rank-1,CL,77.91,60k
+gaitpart,hid,Rank-1,Overall,45.65,60k
+gaitpart,hid,mAP,Overall,57.59,60k
+gaitpart,sustech,Rank-1,Overall,59.01,60k
+gaitpart,sustech,Rank-1,Normal,63.17,60k
+gaitpart,sustech,Rank-1,Bag,62.18,60k
+gaitpart,sustech,Rank-1,Clothing,34.45,60k
+gaitpart,sustech,Rank-1,Carrying,59.51,60k
+gaitpart,sustech,Rank-1,Umbrella,55.83,60k
+gaitpart,sustech,Rank-1,Uniform,54.25,60k
+gaitpart,sustech,Rank-1,Occlusion,55.71,60k
+gaitpart,sustech,Rank-1,Night,21.22,60k
+gaitgl,casiab,Rank-1,NM,97.28,80k checkpoint
+gaitgl,casiab,Rank-1,BG,94.38,80k checkpoint
+gaitgl,casiab,Rank-1,CL,83.13,80k checkpoint
+gaitgl,hid,Rank-1,Overall,38.41,70k checkpoint
+gaitgl,hid,mAP,Overall,49.79,70k checkpoint
+gaitgl,sustech,Rank-1,Overall,53.47,60k
+gaitgl,sustech,Rank-1,Normal,56.27,60k
+gaitgl,sustech,Rank-1,Bag,58.00,60k
+gaitgl,sustech,Rank-1,Clothing,39.18,60k
+gaitgl,sustech,Rank-1,Carrying,53.16,60k
+gaitgl,sustech,Rank-1,Umbrella,51.10,60k
+gaitgl,sustech,Rank-1,Uniform,48.95,60k
+gaitgl,sustech,Rank-1,Occlusion,48.22,60k
+gaitgl,sustech,Rank-1,Night,16.77,60k
+gaitbase,casiab,Rank-1,NM,97.87,60k
+gaitbase,casiab,Rank-1,BG,93.69,60k
+gaitbase,casiab,Rank-1,CL,79.38,60k
+gaitbase,hid,Rank-1,Overall,90.83,60k
+gaitbase,hid,mAP,Overall,94.37,60k
+gaitbase,sustech,Rank-1,Overall,75.15,60k
+gaitbase,sustech,Rank-1,Normal,77.93,60k
+gaitbase,sustech,Rank-1,Bag,77.52,60k
+gaitbase,sustech,Rank-1,Clothing,47.12,60k
+gaitbase,sustech,Rank-1,Carrying,75.16,60k
+gaitbase,sustech,Rank-1,Umbrella,74.66,60k
+gaitbase,sustech,Rank-1,Uniform,74.76,60k
+gaitbase,sustech,Rank-1,Occlusion,79.16,60k
+gaitbase,sustech,Rank-1,Night,25.07,60k
+swingait,casiab,Rank-1,NM,95.70,60k
+swingait,casiab,Rank-1,BG,90.52,60k
+swingait,casiab,Rank-1,CL,69.62,60k
+swingait,hid,Rank-1,Overall,26.17,60k
+swingait,hid,mAP,Overall,37.83,60k
+swingait,sustech,Rank-1,Overall,69.18,60k
+swingait,sustech,Rank-1,Normal,73.93,60k
+swingait,sustech,Rank-1,Bag,73.16,60k
+swingait,sustech,Rank-1,Clothing,31.84,60k
+swingait,sustech,Rank-1,Carrying,69.72,60k
+swingait,sustech,Rank-1,Umbrella,68.11,60k
+swingait,sustech,Rank-1,Uniform,67.82,60k
+swingait,sustech,Rank-1,Occlusion,70.69,60k
+swingait,sustech,Rank-1,Night,22.69,60k
+deepgaitv2_suite,casiab,Rank-1,NM,97.06,later suite; NOT thesis 97.28
+deepgaitv2_suite,casiab,Rank-1,BG,93.18,later suite; NOT thesis 93.52
+deepgaitv2_suite,casiab,Rank-1,CL,78.52,later suite; NOT thesis 76.75
+deepgaitv2_suite,hid,Rank-1,Overall,4.45,later suite; NOT thesis 90.78
+deepgaitv2_suite,hid,mAP,Overall,10.11,later suite
+deepgaitv2_suite,sustech,Rank-1,Overall,72.35,later suite; NOT thesis 75.16
+deepgaitv2_suite,sustech,Rank-1,Normal,76.01,later suite
+deepgaitv2_suite,sustech,Rank-1,Bag,75.16,later suite
+deepgaitv2_suite,sustech,Rank-1,Clothing,40.09,later suite
+deepgaitv2_suite,sustech,Rank-1,Carrying,72.61,later suite
+deepgaitv2_suite,sustech,Rank-1,Umbrella,72.97,later suite
+deepgaitv2_suite,sustech,Rank-1,Uniform,71.23,later suite
+deepgaitv2_suite,sustech,Rank-1,Occlusion,72.25,later suite
+deepgaitv2_suite,sustech,Rank-1,Night,24.12,later suite

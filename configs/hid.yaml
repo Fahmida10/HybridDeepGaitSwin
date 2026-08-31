@@ -1,0 +1,108 @@
+# HybridDeepGaitSwin — HID 2022 (dissertation recipe)
+# Training partition: datasets/HID/HID.json
+# Evaluation partition: datasets/HID/HID-train-eval.json (swapped by eval.sh)
+# Internal protocol: gallery = first sequence per subject, probe = remainder.
+# Not an official HID 2022 challenge submission.
+
+data_cfg:
+  dataset_name: HID
+  dataset_root: DATA_ROOT_PLACEHOLDER
+  dataset_partition: ./datasets/HID/HID.json
+  num_workers: 4
+  remove_no_gallery: false
+  cache: false
+  test_dataset_name: HID
+
+evaluator_cfg:
+  enable_float16: true
+  restore_ckpt_strict: false
+  restore_hint: EVAL_RESTORE_HINT
+  save_name: HybridDeepGaitSwin_HID
+  eval_func: evaluate_HID2022
+  rerank: false
+  sampler:
+    batch_shuffle: false
+    batch_size: 1
+    sample_type: all_ordered
+    frames_all_limit: 720
+  metric: euc
+  transform:
+    - type: Compose
+      trf_cfg:
+        - type: ResizeSilTransform
+          img_h: 64
+          img_w: 64
+          interpolation: nearest
+        - type: BaseSilCuttingTransform
+
+loss_cfg:
+  - loss_term_weight: 1.0
+    margin: 0.2
+    type: TripletLoss
+    log_prefix: triplet
+  - loss_term_weight: 1.0
+    scale: 16
+    type: CrossEntropyLoss
+    log_prefix: softmax
+    log_accuracy: true
+
+model_cfg:
+  model: HybridDeepGaitSwin
+  Backbone:
+    mode: p3d
+    in_channels: 1
+    layers: [1, 4, 4, 1]
+    channels: [64, 128, 256, 512]
+    swin_layers: [2, 2]
+    swin_embed_dim: 256
+  Fusion:
+    squeeze_ratio: 16
+  bin_num: [16]
+  SeparateBNNecks:
+    class_num: 500
+
+optimizer_cfg:
+  lr: 0.0003
+  solver: AdamW
+  weight_decay: 0.02
+
+scheduler_cfg:
+  gamma: 0.1
+  milestones: [20000, 40000, 50000]
+  scheduler: MultiStepLR
+
+trainer_cfg:
+  enable_float16: true
+  fix_BN: false
+  with_test: false
+  log_iter: 100
+  restore_ckpt_strict: false
+  restore_hint: TRAIN_RESTORE_HINT
+  optimizer_reset: false
+  scheduler_reset: false
+  save_iter: 10000
+  save_name: HybridDeepGaitSwin_HID
+  sync_BN: true
+  T_max_iter: 60000
+  total_iter: 60000
+  sampler:
+    batch_shuffle: true
+    batch_size: [2, 2]
+    frames_num_fixed: 30
+    frames_skip_num: 4
+    sample_type: fixed_ordered
+    type: TripletSampler
+  transform:
+    - type: Compose
+      trf_cfg:
+        - type: ResizeSilTransform
+          img_h: 64
+          img_w: 64
+          interpolation: nearest
+        - type: RandomPerspective
+          prob: 0.2
+        - type: BaseSilCuttingTransform
+        - type: RandomHorizontalFlip
+          prob: 0.2
+        - type: RandomRotate
+          prob: 0.2
