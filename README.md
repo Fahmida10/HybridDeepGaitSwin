@@ -67,7 +67,7 @@ HybridDeepGaitSwin/
 ├── eval.sh                 ← standalone evaluation
 ├── environment.sh
 ├── requirements.txt
-├── configs/                ← dissertation recipes (60k, AdamW, squeeze 16)
+├── configs/                ← dissertation experiment configurations.
 ├── scripts/                ← preprocess, train-all, sample smoke test
 ├── figures/                ← dissertation figures
 ├── results/metrics.csv     ← reported Rank-1 table
