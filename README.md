@@ -18,7 +18,7 @@ The model definition is the root file **`hybrid_gait.py`**. Everything else live
 | HID (internal) | 90.78 | **93.15** | +2.37 |
 | SUSTech1K Overall | 75.16 | **78.48** | +3.32 |
 
-Full condition table: [`results/metrics.csv`](results/metrics.csv). Figures: [`figures/`](figures/). Defence notes: [`docs/defence.md`](docs/defence.md).
+Full condition table: [`results/metrics.csv`](results/metrics.csv). Figures: [`figures/`](figures/). 
 
 **HID protocol:** gallery = first sequence per subject, probe = remaining sequences (`evaluate_HID2022`). **Not** a competition submission.
 
