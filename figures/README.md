@@ -12,6 +12,8 @@ Dissertation figures for HybridDeepGaitSwin. Machine paths and lab-notebook labe
 | `headline_rank1.png` | Primary Rank-1 comparison |
 | `casiab_detail.png` | CASIA-B NM/BG/CL and view-angle curves |
 | `hid_sustech_training.png` | HID, SUSTech1K conditions, and training loss |
+| `additional_baselines_headline.png` | Additional OpenGait baseline campaign: headline Rank-1 results |
+| `additional_baselines_sustech_conditions.png` | Additional OpenGait baseline campaign: SUSTech1K condition-wise Rank-1 results |
 
 Regenerate the two pipeline diagrams:
 
